@@ -1,0 +1,638 @@
+@import 'partials/variables';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/welcome';
+@import 'partials/news';
+
+@font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/Poppins/poppins-v15-latin-regular.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../fonts/Icomoon/icomoon.woff) format("woff"), 
+         url(../fonts/Icomoon/icomoon.ttf) format("truetype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.4px;
+}
+
+#img-main-gradient {
+    position: relative;
+    width: 100%;
+    max-width: 100vh;
+}
+
+#img-main-cyber {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin-bottom: 15px;
+
+    @media (min-width: 768px) {
+        width: 100vw;
+    }
+
+    @media (min-width: 992px) {
+        width: 100vw;
+    }
+
+    @media (min-width: 1260px) {
+        width: 100vw;
+    }
+}
+
+#img-main-gradient::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background: rgba(0, 0, 0, 0.5);
+
+    @media (min-width: 768px) {
+        width: 100vw;
+    }
+
+    @media (min-width: 992px) {
+        width: 100vw;
+    }
+
+    @media (min-width: 1260px) {
+        width: 100vw;
+    }
+}
+
+#img-main-title, #img-main-p {
+
+    @media (min-width: 768px) {
+        margin: 0;
+        padding: 0 0 0 382px;
+        text-align: left;
+        font-size: 26px;
+    }
+}
+
+#img-main-title {
+    font-size: 38px;
+
+    @media (min-width: 768px) {
+        margin: 0 0 5px 0;
+        font-size: 60px;
+    }
+}
+
+.img-main-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-weight: 900;
+    padding: 5px;
+    font-size: 20px;
+    color: $white;
+    letter-spacing: 1.2px;
+    z-index: 2;
+}
+
+#img-main-readmore {
+    display: block;
+    width: 220px;
+    height: 56px;
+    margin: 25px auto 0;
+    padding: 10px;
+    text-align: center;
+    background-color: #f62459;
+    border-radius: 3px;
+    font-size: 20px;
+    color: $white;
+    font-weight: normal;
+    z-index: 2;
+}
+
+#pc-menu-view {                         ///////////// Do this same thing but for latest news
+    display: none;
+    font-size: 35px;
+    margin: 0 0 0 550px;
+
+    @media (min-width: 768px) {
+        display: inline;
+    }
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media (min-width: 768px) {
+        width: 750px;
+    }
+
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+
+    @media (min-width: 1260px) {
+        width: 1200px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+li {
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.large-menu-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.large-menu {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    > .large-menu-btn:nth-child(-n+3) {
+        grid-column: span 4;
+    }
+
+    > .large-menu-btn:nth-child(n+4):nth-child(-n+7) {
+        grid-column: span 3;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+
+        > .large-menu-btn {
+            grid-column: 1 / -1;
+            width: 100%;
+            min-width: 0;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        > .large-menu-btn {
+            grid-column: span 1;
+            width: 100%;
+            min-width: 0;
+        }
+    }
+}
+
+.large-menu-btn { // Kinda done just some finishing touches pls
+    display: flex;
+    flex-direction: column;
+    color: $black;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 35vh;
+    background-color: $white;
+    border-radius: 15px;
+    position: relative;
+    top: 0;
+    transition: 0.5s ease;
+    border: 1px solid #e0e0e0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 35px;
+    
+    #IT-read-more {
+        background-color: $support;
+    }
+
+    #mark-read-more {
+        background-color: $market;
+    }
+
+    #tele-read-more {
+        background-color: $tele;
+    }
+
+    #web-read-more {
+        background-color: $web;
+    }
+
+    #security-read-more {
+        background-color: $cyber;
+    }
+
+    #train-read-more {
+        background-color: $dev;
+    }
+
+    &:hover {
+        top: -10px;
+        transition: 0.5s ease;
+        color: $white;
+
+        #icon-dev::before, #dev-read-more {
+            background-color: $white;
+            color: $consult;
+        }
+
+        #icon-IT::before, #IT-read-more {
+            background-color: $white;
+            color: $support;
+        }
+
+        #icon-mark::before, #mark-read-more {
+            background-color: $white;
+            color: $market;
+        }
+
+
+        #icon-tele::before, #tele-read-more {
+            background-color: $white;
+            color: $tele;
+        }
+
+        #icon-web::before, #web-read-more {
+            background-color: $white;
+            color: $web;
+        }
+
+        #icon-security::before, #security-read-more {
+            background-color: $white;
+            color: $cyber;
+        }
+
+        #icon-train::before, #train-read-more {
+            background-color: $white;
+            color: $dev;
+        }
+    }
+}
+
+.menu-titles-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.menu-main-title {
+    font-weight: normal;
+    font-size: 40px;
+    margin: 0;
+    text-align: left;
+}
+
+.menu-view-h2 {
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+    color: $black;
+    font-weight: 900;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @media (min-width: 768px) { // Media Queries do NOT need repeating like if it's min 768px and 992px is there and it has the same code just remove it DRY yk
+        display: none;
+    }
+}
+
+#mobile-view-h2 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.menu-titles {
+    font-size: 20px;
+}
+
+.menu-para {
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.menu-btn-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    margin: 0 0 20px 0;
+    width: 65px;
+    height: 65px;
+}
+
+.menu-read-more {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 17px;
+    color: $white;
+    text-align: center;
+    background-color: $read-more;
+    border-radius: 3px;
+    width: 130px;
+    height: 40px;
+    letter-spacing: 0.2;
+    padding: 7px;
+}
+
+.menu-read-more::before {
+    background-color: $white;
+    color: $consult;
+}
+
+#consult-btn:hover {
+    background-color: $consult;
+}
+
+#support-btn:hover {
+    background-color: $support;
+}
+
+#market-btn:hover {
+    background-color: $market;
+}
+
+#tele-btn:hover {
+    background-color: $tele;
+}
+
+#web-btn:hover {
+    background-color: $web;
+}
+
+#cyber-btn:hover {
+    background-color: $cyber;
+}
+
+#dev-btn:hover {
+    background-color: $dev;
+}
+
+#icon-dev::before {
+    @include btn-span-circle;
+    background-color: $consult;
+    content: "\f085";
+}
+
+#icon-IT::before {
+    @include btn-span-circle;
+    background-color: $support;
+    content: "\e956";
+}
+
+#icon-mark::before {
+    @include btn-span-circle;
+    background-color: $market;
+    content: "\e903";
+}
+
+#icon-tele::before {
+    @include btn-span-circle;
+    background-color: $tele;
+    content: "\e901";
+}
+
+#icon-web::before {
+    @include btn-span-circle;
+    background-color: $web;
+    content: "\ea80";
+}
+
+#icon-security::before {
+    @include btn-span-circle;
+    background-color: $cyber;
+    content: "\e902";
+}
+
+#icon-train::before {
+    @include btn-span-circle;
+    background-color: $dev;
+    content: "\e904";
+}
+
+.pc-extra-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    background-color: #333645;
+    
+    small {
+        font-size: 10px;
+    }
+}
+
+.extra-nav-btn {
+    display: none;
+    
+    width: 180px;
+    height: 120px;
+    padding: 28px 20px 0 20px;
+    line-height: 1;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        display: inline;
+    }
+
+    @media (min-width: 992px) {
+        display: inline;
+    }
+
+    @media (min-width: 1260px) {
+        display: inline;
+    }
+}
+
+#icon-extra-consult {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $consult;
+        content: '\f085';
+    }
+    
+    &:hover {
+        background-color: $consult;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+#icon-extra-support {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $support;
+        content: '\e956';
+    }
+    
+    &:hover {
+        background-color: $support;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+#icon-extra-market {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $market;
+        content: '\e903';
+    }
+    
+    &:hover {
+        background-color: $market;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+#icon-extra-tele {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $tele;
+        content: '\e901';
+    }
+    
+    &:hover {
+        background-color: $tele;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+#icon-extra-web {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $web;
+        content: '\ea80';
+    }
+    
+    &:hover {
+        background-color: $web;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+#icon-extra-cyber {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $cyber;
+        content: '\e902';
+    }
+    
+    &:hover {
+        background-color: $cyber;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+#icon-extra-dev {
+
+    &::before {
+        font-family: 'icomoon';
+        font-size: 25px;
+        color: $dev;
+        content: '\e904';
+    }
+    
+    &:hover {
+        background-color: $dev;
+        color: $white;
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .large-menu {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        > .large-menu-btn, > .large-menu-btn:nth-child(-n+3), > .large-menu-btn:nth-child(n+4):nth-child(-n+7) {
+            grid-column: 1 / -1;
+            width: 100%;
+            min-width: 0;
+        }
+    }
+}

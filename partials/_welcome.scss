@@ -1,0 +1,255 @@
+.welcome-wrapper {
+    background-color: $primary-color;
+}
+
+#welcomeP-1 {
+    font-weight: 900;
+    padding: 0 0 18px 0;
+}
+
+.star {
+    width: 50px;
+    height: 50px;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    background-color: $primary-color;
+    color: $white;
+    margin: 0 auto;
+    padding: 0 15px 50px;
+
+    .welcome-content, .welcome-review {
+        flex: 1;
+        min-width: 0;
+    }
+
+    p {
+        margin: 25px 15px 0 ;
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+    h1 {
+        margin: 25px 25px 25px 0;
+        padding: 15px;
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 38px;
+    }
+}
+
+.welcome-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 15px 0;
+    font-size: 20px;
+
+    #btn-why, #btn-culture{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 58px;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    #btn-why {
+        flex: 1;
+    }
+
+    #btn-culture {
+        flex: 1;
+    }
+}
+
+.welcome-info-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $btn-color;
+    color: $white;
+    margin: 17px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#client-thinks {
+    margin: 25px 0px 25px;
+    padding: 15px;
+}
+
+.welcome-stars {
+    padding: 5px 15px;
+}
+
+#welcome-quote {
+    margin: 10px 15px 25px;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    text-shadow: none;
+    line-height: 35px;
+}
+
+#partner-title {
+    color: #a3a8ac;
+    font-weight: 900;
+}
+
+#partnership-a {
+    text-decoration: none;
+    color: $white;
+    margin: 100px 15px;
+    font-weight: 900;
+    text-shadow: none;
+}
+
+.client {
+    margin: 25px 0;
+}
+
+.review-int {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    
+    #google-review, #trust-review {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px 8px 0 15px;
+        width: 300px;
+        height: 56px;
+        border-radius: 6px;
+        font-size: 20px;
+    }
+
+    #google-review {
+        background-color: #4387f6;
+        flex: 1;
+    }
+
+    #trust-review {
+        background-color: #00b67b;
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 0 15px 30px;
+    }
+
+    .welcome-section .welcome-content, .welcome-section .welcome-review {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        box-sizing: border-box;
+    }
+
+    .welcome-section h1 {
+        font-size: 30px;
+        line-height: 34px;
+        margin: 20px 0;
+        padding: 0;
+    }
+
+    .welcome-section p {
+        margin: 15px 0;
+    }
+
+    .welcome-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 25px 0 0;
+    }
+
+    .welcome-info #btn-why, .welcome-info #btn-culture {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        flex: none;
+        align-self: flex-start;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0 35px;
+        white-space: nowrap;
+    }
+
+    .review-int {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .review-int #google-review, .review-int #trust-review {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        flex: none;
+        align-self: flex-start;
+        height: 56px;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0 35px;
+        white-space: nowrap;
+    }
+
+    #client-thinks {
+        margin: 15px 0;
+        padding: 0;
+    }
+
+    .welcome-stars {
+        padding: 5px 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 30px;
+        line-height: 34px;
+        margin: 20px 0;
+        padding: 0;
+    }
+
+    .welcome-section p {
+        margin: 15px 0;
+    }
+
+    #client-thinks {
+        margin: 15px 0;
+        padding: 0;
+    }
+
+    .welcome-stars {
+        padding: 5px 0;
+    }
+
+    #welcome-quote {
+        margin: 10px 0 20px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    #partnership-a {
+        display: inline-block;
+        margin: 0;
+    }
+}

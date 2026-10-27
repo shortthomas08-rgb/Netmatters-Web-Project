@@ -1,0 +1,34 @@
+$primary-color: #323544;
+$secondary-color: #212330;
+$btn-color: #272936;
+$white: #fff;
+$black: #000;
+$read-more: #f7b322;
+$border-1: #999AA2;
+
+$fb-color: #3b5998;
+$in-color: #0077b5;
+$tw-color: #00aced;
+$ig-color: #d93175;
+
+$consult: #67809f;
+$support: #4183d7;
+$market: #2ecc71;
+$tele: #d64541;
+$web: #926fb1;
+$cyber: #f62459;
+$dev: #ce4125;
+
+// Make a mixin for like icons make it easier do the ^include icon- thing
+
+@mixin btn-span-circle {
+    font-family: 'icomoon';
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}

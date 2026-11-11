@@ -19,7 +19,12 @@ $web: #926fb1;
 $cyber: #f62459;
 $dev: #ce4125;
 
-// Make a mixin for like icons make it easier do the ^include icon- thing
+$pink-btn: #926fb1;
+$blue-btn: #4183d7;
+$green-btn: #2ecc71;
+$yellow-btn: #f7b322;
+
+// Mixins
 
 @mixin btn-span-circle {
     font-family: 'icomoon';
@@ -31,4 +36,61 @@ $dev: #ce4125;
     border-radius: 50%;
     width: 65px;
     height: 65px;
+}
+
+@mixin nav-icon($content, $colour) {
+    font-family: 'icomoon';
+    font-size: 25px;
+    color: $colour;
+    content: '#{$content}';
+}
+
+@mixin nav-icon-hov($bg-colour) {
+    background-color: $bg-colour;
+    color: $white;
+}
+
+@mixin nav-icon-style($content, $colour) {
+    &::before {
+        @include nav-icon($content, $colour);
+    }
+
+    &:hover {
+        @include nav-icon-hov($colour);
+
+        &::before {
+            color: $white;
+        }
+    }
+}
+
+@mixin btn-hover($colour) {
+    &:hover {
+        background-color: $colour;
+    }
+}
+
+@mixin service-icon($colour, $content) {
+    &::before {
+        @include btn-span-circle;
+        background-color: $colour;
+        content: $content;
+    }
+}
+
+@mixin read-more-style($colour) {
+    background-color: $colour;
+
+    &:hover {
+        background-color: $white;
+        color: $colour;
+    }
+}
+
+@mixin service-hover($icon, $button, $colour) {
+    #{$icon}::before,
+    #{$button} {
+        background-color: $white;
+        color: $colour;
+    }
 }

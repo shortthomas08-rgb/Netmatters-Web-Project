@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="ROBOTS" content="NOINDEX,NOFOLLOW">
 
         <link rel="stylesheet" href="main.css">
@@ -14,16 +14,20 @@
 
     <body>
         <header class="main-nav">
-            <div class="header-top">
+            <div class="header-top container">
                 <img class="header-img" src="images/logo.png" alt="Netmatters Logo">
-                <h4><a class="icon-phone" href="#"></a></h4>
+                <a class="icon-phone" href="#"></a>
                 <a id="pc-support" class="pc-button icon-mouse" href="#">SUPPORT</a>
                 <a id="pc-contact" class="pc-button icon-plane" href="#">CONTACT</a>
                 <div class="pc-search">
                     <input id="pc-searchbar" type="text" placeholder="Search...">
                     <button id="search-confirm" class="pc-icon-search"></button>
                 </div>
-                <button id="main-nav-btn">|||</button>
+                <button id="main-nav-btn">
+                    <span class="btn-line"></span>
+                    <span class="btn-line"></span>
+                    <span class="btn-line"></span>
+                </button>
             </div>
             <div class="search-container">
                 <input id="search-bar" type="text" placeholder="Search...">
@@ -32,13 +36,115 @@
         </header>
 
         <div class="pc-extra-nav">
-            <a id="icon-extra-consult" class="extra-nav-btn" href="#"><small><br>CONSULTANCY</small><br>& DEVELOPMENT</a>
-            <a id="icon-extra-support" class="extra-nav-btn" href="#"><small><br>IT</small><br>SUPPORT</a>
-            <a id="icon-extra-market" class="extra-nav-btn" href="#"><small><br>DIGITAL</small><br>MARKETING</a>
-            <a id="icon-extra-tele" class="extra-nav-btn" href="#"><small><br>TELECOMS</small><br>SERVICES</a>
-            <a id="icon-extra-web" class="extra-nav-btn" href="#"><small><br>WEB</small><br>DESIGN</a>
-            <a id="icon-extra-cyber" class="extra-nav-btn" href="#"><small><br>CYBER</small><br>SECURITY</a>
-            <a id="icon-extra-dev" class="extra-nav-btn" href="#"><small><br>DEVELOPER</small><br>COURSE</a>
+            <div class="dropdown">
+                <a id="icon-extra-consult" class="extra-nav-btn" href="#"><small><br>CONSULTANCY</small><br>& DEVELOPMENT</a>
+                <div id="dd-consult" class="dropdown-content">
+                    <h2 class="drop-header">Our Consultancy & Development Services</h2>
+                    <div class="dropdown-list">
+                        <a id="icon-c1" class="header-icon" href="#">Bespoke CRM</a>
+                        <a id="icon-c2" class="header-icon" href="#">Mobile App Development</a>
+                        <a id="icon-c3" class="header-icon" href="#">Operational Systems</a>
+                        <a id="icon-c4" class="header-icon" href="#">Intranet Development</a>
+                        <a id="icon-c5" class="header-icon" href="#">SAP S/4HANA Management</a>
+                        <a id="icon-c6" class="header-icon" href="#">Business Automation</a>
+                        <a id="icon-c7" class="header-icon" href="#">Bespoke Databases</a>
+                        <a id="icon-c8" class="header-icon" href="#">Business Central Implementation</a>
+                        <a id="icon-c9" class="header-icon" href="#">Customer Portal Development</a>
+                        <a id="icon-c10" class="header-icon" href="#">Software Integrations</a>
+                        <a id="icon-c11" class="header-icon" href="#">Sharepoint Development</a>
+                        <a id="icon-c12" class="header-icon" href="#">Internet of Things (IoT) Software</a>
+                        <a id="icon-c13" class="header-icon" href="#">Reporting Hub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a id="icon-extra-support" class="extra-nav-btn" href="#"><small><br>IT</small><br>SUPPORT</a>
+                <div id="dd-support" class="dropdown-content">
+                    <h2 class="drop-header">Our IT Support Services</h2>
+                    <div class="dropdown-list">
+                        <a id="icon-c14" class="header-icon" href="#">Managed IT Support</a>
+                        <a id="icon-c15" class="header-icon" href="#">IT Consultancy</a>
+                        <a id="icon-c16" class="header-icon" href="#">Business IT Support</a>
+                        <a id="icon-c17" class="header-icon" href="#">Cloud Service Provider</a>
+                        <a id="icon-c18" class="header-icon" href="#">Office 365 for Business</a>
+                        <a id="icon-c19" class="header-icon" href="#">Data Backup & Disaster Recovery</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a id="icon-extra-market" class="extra-nav-btn" href="#"><small><br>DIGITAL</small><br>MARKETING</a>
+                <div id="dd-market" class="dropdown-content">
+                <h2 class="drop-header">Our Digital Marketing Services</h2>                    
+                    <div class="dropdown-list">
+                        <a id="icon-c20" class="header-icon" href="#">Search Engine Optimisation (SEO)</a>
+                        <a id="icon-c21" class="header-icon" href="#">Email Marketing</a>
+                        <a id="icon-c22" class="header-icon" href="#">Pay Per Click Advertising (PPC)</a>
+                        <a id="icon-c23" class="header-icon" href="#">Social Media Marketing</a>
+                        <a id="icon-c24" class="header-icon" href="#">Conversion Rate Optimisation (CRO)</a>
+                        <a id="icon-c25" class="header-icon" href="#">Content Marketing</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a id="icon-extra-tele" class="extra-nav-btn" href="#"><small><br>TELECOMS</small><br>SERVICES</a>
+                <div id="dd-tele" class="dropdown-content">
+                <h2 class="drop-header">Our Telecoms Services</h2>
+                    <div class="dropdown-list">
+                        <a id="icon-c26" class="header-icon" href="#">Business Mobile</a>
+                        <a id="icon-c27" class="header-icon" href="#">Business Connectivity</a>
+                        <a id="icon-c28" class="header-icon" href="#">Phone System Health Check</a>
+                        <a id="icon-c29" class="header-icon" href="#">Telecoms Bill Review</a>
+                        <a id="icon-c30" class="header-icon" href="#">Business Phone Systems</a>
+                        <a id="icon-c31" class="header-icon" href="#">3CX Systems</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a id="icon-extra-web" class="extra-nav-btn" href="#"><small><br>WEB</small><br>DESIGN</a>
+                <div id="dd-web" class="dropdown-content">
+                <h2 class="drop-header">Our Web Design Services</h2>
+                    <div class="dropdown-list">
+                        <a id="icon-c32" class="header-icon" href="#">Bespoke Website Design</a>
+                        <a id="icon-c33" class="header-icon" href="#">Branding & Design</a>
+                        <a id="icon-c34" class="header-icon" href="#">eCommerce Website Design</a>
+                        <a id="icon-c35" class="header-icon" href="#">Mobile App Development</a>
+                        <a id="icon-c36" class="header-icon" href="#">Pay Monthly Websites</a>
+                        <a id="icon-c37" class="header-icon" href="#">Web Hosting</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <a id="icon-extra-cyber" class="extra-nav-btn" href="#"><small><br>CYBER</small><br>SECURITY</a>
+                <div id="dd-cyber" class="dropdown-content">
+                <h2 class="drop-header">Our Cyber Security Services</h2>
+                    <div class="dropdown-list">
+                        <a id="icon-c38" class="header-icon" href="#">Cyber Security Assessment</a>
+                        <a id="icon-c39" class="header-icon" href="#">Cyber Essentials Certification</a>
+                        <a id="icon-c40" class="header-icon" href="#">Cyber Security Management</a>
+                        <a id="icon-c41" class="header-icon" href="#">PCI Compliance</a>
+                        <a id="icon-c42" class="header-icon" href="#">Cyber Penetration Testing</a>
+                        <a id="icon-c43" class="header-icon" href="#">Hacking Prevention</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a id="icon-extra-dev" class="extra-nav-btn" href="#"><small><br>DEVELOPER</small><br>COURSE</a>
+                <div id="dd-dev" class="dropdown-content">
+                <h2 class="drop-header">Our Developer Course Services</h2>
+                <div class="dropdown-list">
+                        <a id="icon-c44" class="header-icon" href="#">Train For A Career In Tech</a>
+                        <a id="icon-c45" class="header-icon" href="#">Scion Collaborators</a>
+                        <a id="icon-c46" class="header-icon" href="#">Skills Bootcamp</a>
+                        <a id="icon-c47" class="header-icon" href="#">Scion Scheme Frequently Asked Questions</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="scrolling-menu">
@@ -52,7 +158,7 @@
             </div>
         </div>
 
-        <div class="large-menu-container">
+        <div class="large-menu-container container">
             <div class="menu-titles-media">
                 <h1 class="menu-main-title">Our Services</h1>
                 <a id="pc-menu-view" class="menu-view-h2" href="#">View Our Work &#10140;</a>
@@ -120,9 +226,9 @@
         </div>
 
         <section class="welcome-wrapper">
-            <div class="welcome-section">
+            <div class="welcome-section container">
                 <div class="welcome-content">
-                    <h1 class="welcome-headers">Welcome To Netmatters</h1>
+                    <h2 class="welcome-headers">Welcome To Netmatters</h2>
                     <div>
                         <p id="welcomeP-1">Netmatters is a leading Bespoke Software, IT Support, and Digital Marketing company based in the East of England with offices in Cambridge, Wymondham, and Great Yarmouth.</p>
                         <p id="welcomeP-2">We aren't tied into contracts with third-party providers, so you know that our recommendations for your business are based purely with one benefit in mind: to help improve your business with the most appropriate solutions.</p>
@@ -135,7 +241,7 @@
                 </div>
 
                 <div class="welcome-review">
-                    <h1 id="client-thinks" class="welcome-headers">What Our Clients Think</h1>
+                    <h2 id="client-thinks" class="welcome-headers">What Our Clients Think</h2>
                     <div id="welcome-rating">
                         <div class="welcome-stars">
                             <img class="star" src="images/star-solid.png" alt="Star">
@@ -162,14 +268,14 @@
             </div>
         </section>
 
-        <div class="latest-news">
+        <div class="latest-news container">
             <div class="menu-titles-media">
                 <h2 id="latest-news-header">Latest News</h2>
                 <a id="pc-news-all" class="menu-view-h2" href="#"><strong>View All</strong> &#10140;</a>
             </div>
-            <div class="news-grid">
+            <div class="news-grid container">
                 <div class="news1">
-                    <a href="#">
+                    <div class="news-things">
                         <div class="img-wrap">
                             <img class="news-img1" src="images/latestnews1.png" alt="Image displaying 2 people talking about work">
                             <a class="news-insight" href="#">INSIGHTS</a>
@@ -185,10 +291,10 @@
                                 <p class="news-date">27th June 2025</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="news1">
-                    <a href="#">
+                    <div class="news-things">
                         <div class="img-wrap">
                             <img class="news-img1" src="images/latestnews2.png" alt="Image Displaying a Circuit Board">
                             <a class="news-insight" href="#">INSIGHTS</a>
@@ -204,10 +310,10 @@
                                 <p class="news-date">26th June 2025</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="news1">
-                    <a href="#">
+                <div id="news-thing-2" class="news1">
+                    <div class="news-things">
                         <div class="img-wrap">
                             <img class="news-img1" src="images/latestnews3.png" alt="Image Displaying a Circuit Board">
                             <a id="news-career" class="news-insight" href="#">CAREERS</a>
@@ -223,26 +329,134 @@
                                 <p class="news-date">20th June 2025</p>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
             <a id="news-view-all" class="menu-view-h2" href="#"><strong>View All</strong> &#10140;</a>
         </div>
 
         <div class="scrolling-logos">
-            <img class="logo-bar" src="images/ashcroft-logo.png" alt="Ashcroft Logo">
-            <img class="logo-bar" src="images/traveller-logo.png" alt="One Traveller Logo">
-            <img class="logo-bar" src="images/searles-logo.jpg" alt="Searles Logo">
-            <img class="logo-bar" src="images/busseys-logo.png" alt="Busseys Logo">
-            <img class="logo-bar" src="images/crane-logo.png" alt="Crane Logo">
-            <img class="logo-bar" src="images/black-swan-logo.png" alt="Black Swan Logo">
-            <img class="logo-bar" src="images/xupes-logo.png" alt="Xupes Logo">
-            <img class="logo-bar" src="images/beat-logo.png" alt="Beat Logo">
-            <img class="logo-bar" src="images/survey-logo.png" alt="Survey Solutions Logo">
-            <img class="logo-bar" src="images/girlguide-logo.png" alt="Girl Guides Anglia Logo">
-            <img class="logo-bar" src="images/sweetzy-logo.png" alt="Sweetzy Logo">
-            <img class="logo-bar" src="images/howes-logo.png" alt="Howes Percival Logo">
-            <img class="logo-bar" src="images/gdst-logo.png" alt="Girls Day School Trust Logo">
+
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/ashcroft-logo.png" alt="Ashcroft Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Ashcroft Partnership LLP</h4>
+                    <p>Originally founded in 2006 as Ashcroft Anthony, they became Aschroft Partnership LLP in 2020 and are one of the top chartered accountancy firms in Cambridge, advising entrepeneurs and families.</p>
+                    <a class="pink-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>
+
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/traveller-logo.png" alt="One Traveller Logo">
+
+                <div class="logo-tooltip">
+                    <h4>One Traveller</h4>
+                    <p>One Traveller, founded in 2007, is a leading provider of solo holidays for over 50s.</p>
+                    <a class="pink-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/searles-logo.jpg" alt="Searles Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Searles Leisure Resort</h4>
+                    <p>Searles Leisure Resort, on the beautiful North Norfolk coast, is an award-winning UK holiday resort for families.</p>
+                    <a class="green-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>
+
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/busseys-logo.png" alt="Busseys Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Busseys</h4>
+                    <p>One of the UK's leading Ford dealerships.</p>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/crane-logo.png" alt="Crane Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Crane Garden Buildings</h4>
+                    <p>Leading manufacturer and supplier of high-end garden rooms, summerhouses, workshops and sheds in the UK.</p>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/black-swan-logo.png" alt="Black Swan Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Black Swan Care Group</h4>
+                    <p>Black Swan Care Group own and manage 21 high-quality care and residential homes with a focus on putting the needs of their residents first.</p>
+                    <a class="yellow-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/xupes-logo.png" alt="Xupes Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Xupes</h4>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/beat-logo.png" alt="Beat Logo">
+
+                <div class="logo-tooltip">
+                    <h4>BEAT</h4>
+                    <p>The UK's eating disorder charity founded in 1989.</p>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/survey-logo.png" alt="Survey Solutions Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Survey Solutions</h4>
+                </div>
+            </div>
+
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/girlguide-logo.png" alt="Girl Guides Anglia Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Girl Guiding Anglia</h4>
+                    <p>Girl Guiding Anglia is part of Girlguiding, the UK's leading charity for girls and young women in the UK.</p>
+                    <a class="blue-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/sweetzy-logo.png" alt="Sweetzy Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Sweetzy</h4>
+                    <p>Sweetzy are an online sweets retailer, based in Wymondham.</p>
+                    <a class="green-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>
+            
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/howes-logo.png" alt="Howes Percival Logo">
+
+                <div class="logo-tooltip">
+                    <h4>Howes Percival</h4>
+                </div>
+            </div>
+
+            <div class="logo-dropdown">
+                <img class="logo-bar logo-hov" src="images/gdst-logo.png" alt="Girls Day School Trust Logo">
+
+                <div class="logo-tooltip">
+                    <h4>GDST</h4>
+                    <p>The Girls' Day School Trust (GDST) is the UK's leading family of 25 independent girls' schools.</p>
+                    <a class="green-btn tooltip-btn" href="#">VIEW OUR CASE STUDY &#10140;</a>
+                </div>
+            </div>  
         </div>
 
         <footer>
@@ -330,11 +544,11 @@
 
         <section class="foot">
             <div class="footer2">
-                <p class="footer2-p">
+                <h2 class="footer2-h">
                     <span>&copy; Copyright Netmatters 2025.</span>
                     <span>All rights reserved.</span>
                     <span>- Sitemap</span>
-                </p>
+                </h2>
             </div>
         </section>
     </body>

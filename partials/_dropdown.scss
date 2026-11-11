@@ -1,0 +1,206 @@
+.pc-extra-nav {
+    position: relative;
+}
+
+.dropdown {
+    position: static;
+    height: 120px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background-color: #333645;
+    z-index: 5;
+    box-sizing: border-box;
+    padding: 45px 0 50px;
+
+    .drop-header {
+        color: $white;
+        font-size: 32px;
+        max-width: 1150px;
+        margin: 0 auto 25px;
+        text-align: left;
+    }
+
+    .dropdown-list {
+        max-width: 1150px;
+        margin: 0 auto;
+        columns: 3;
+        column-gap: 50px;
+    }
+
+    a {
+        display: block;
+        text-align: left;
+        padding: 12px;
+        color: $white;
+        text-decoration: none;
+        break-inside: avoid;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+#dd-consult {
+    background-color: darken($consult, 10%);
+}
+
+#dd-support {
+    background-color: darken($support, 10%);
+}
+
+#dd-market {
+    background-color: darken($market, 10%);
+}
+
+#dd-tele {
+    background-color: darken($tele, 10%);
+}
+
+#dd-web {
+    background-color: darken($web, 10%);
+}
+
+#dd-cyber {
+    background-color: darken($cyber, 10%);
+}
+
+#dd-dev {
+    background-color: darken($dev, 10%);
+}
+
+.header-icon {
+    text-align: left;
+}
+
+.header-icon::before {
+    font-family: 'icomoon';
+    color: $white;
+    padding-right: 10px;
+}
+
+$header-icons: (
+    c1: '\f085',
+    c2: '\e910',
+    c3: '\e90f',
+    c4: '\e911',
+    c5: '\f2b5',
+    c6: '\f0b1',
+    c7: '\e930',
+    c8: '\f0c0',
+    c9: '\f0ed',
+    c10: '\e909',
+    c11: '\ea45',
+    c12: '\f109',
+    c13: '\e908',
+    c14: '\e916',
+    c15: '\e904',
+    c16: '\f0b1',
+    c17: '\e911',
+    c18: '\f109',
+    c19: '\e90e',
+    c20: '\e905',
+    c21: '\e914',
+    c22: '\f0d6',
+    c23: '\f0c0',
+    c24: '\e90d',
+    c25: '\f040',
+    c26: '\e915',
+    c27: '\e912',
+    c28: '\f095',
+    c29: '\f2b5',
+    c30: '\e90c',
+    c31: '\e901',
+    c32: '\f040',
+    c33: '\f0a1',
+    c34: '\f07a',
+    c35: '\e910',
+    c36: '\e90b',
+    c37: '\e911',
+    c38: '\e90a',
+    c39: '\e904',
+    c40: '\f017',
+    c41: '\e902',
+    c42: '\f0c3',
+    c43: '\e913',
+    c44: '\f109',
+    c45: '\f2b5',
+    c46: '\ea80',
+    c47: '\e917',
+);
+
+@each $id, $icon in $header-icons {
+    #icon-#{$id}::before {
+        content: $icon;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .pc-extra-nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .dropdown {
+        flex: 1;
+        min-width: 0;
+        height: 90px;
+    }
+
+    .extra-nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        min-width: 0;
+        padding: 5px 2px;
+        font-size: 10px;
+        overflow: hidden;
+    }
+
+    .dropdown-content {
+        padding: 25px 20px 30px;
+
+        .drop-header {
+            font-size: 24px;
+            padding: 0 15px;
+        }
+
+        .dropdown-list {
+            columns: 2;
+            column-gap: 20px;
+            padding: 0 15px;
+        }
+
+        a {
+            font-size: 12px;
+            padding: 10px 5px;
+        }
+    }
+}   
+
+@media screen and (max-width: 767px) {
+    .pc-extra-nav {
+        display: none !important;
+        height: 0;
+        background: none;
+    }
+}   

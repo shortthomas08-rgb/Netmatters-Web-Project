@@ -3,23 +3,28 @@
 @import 'partials/footer';
 @import 'partials/welcome';
 @import 'partials/news';
+@import 'partials/dropdown';
 
 @font-face {
     font-family: Poppins;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(fonts/Poppins/poppins-v15-latin-regular.woff2) format("woff2");
+    src: url('./fonts/Poppins/poppins-v15-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'icomoon';
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     font-display: swap;
-    src: url(../fonts/Icomoon/icomoon.woff) format("woff"), 
-         url(../fonts/Icomoon/icomoon.ttf) format("truetype");
+    src: url('./fonts/Icomoon/icomoon.woff') format('woff'), 
+         url('./fonts/Icomoon/icomoon.ttf') format('truetype');
 }
+
+html, body {
+    overflow-x: hidden;
+}   
 
 body {
     margin: 0;
@@ -35,59 +40,42 @@ body {
 #img-main-gradient {
     position: relative;
     width: 100%;
-    max-width: 100vh;
+    max-width: none;
 }
 
 #img-main-cyber {
+    display: block;
     width: 100%;
     height: 60vh;
     object-fit: cover;
     object-position: center;
-    display: block;
     margin-bottom: 15px;
-
-    @media (min-width: 768px) {
-        width: 100vw;
-    }
-
-    @media (min-width: 992px) {
-        width: 100vw;
-    }
-
-    @media (min-width: 1260px) {
-        width: 100vw;
-    }
 }
 
 #img-main-gradient::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 60vh;
     background: rgba(0, 0, 0, 0.5);
-
-    @media (min-width: 768px) {
-        width: 100vw;
-    }
-
-    @media (min-width: 992px) {
-        width: 100vw;
-    }
-
-    @media (min-width: 1260px) {
-        width: 100vw;
-    }
 }
 
-#img-main-title, #img-main-p {
-
-    @media (min-width: 768px) {
-        margin: 0;
-        padding: 0 0 0 382px;
+@media (min-width: 768px) {
+    .img-main-text {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        width: 50%;
+        padding: 20px 30px;
         text-align: left;
-        font-size: 26px;
+    }
+
+    #img-main-title,
+    #img-main-p {
+        padding: 0;
+        text-align: left;
     }
 }
 
@@ -118,7 +106,7 @@ body {
     display: block;
     width: 220px;
     height: 56px;
-    margin: 25px auto 0;
+    margin: 25px 0 0;
     padding: 10px;
     text-align: center;
     background-color: #f62459;
@@ -129,32 +117,41 @@ body {
     z-index: 2;
 }
 
-#pc-menu-view {                         ///////////// Do this same thing but for latest news
+#pc-menu-view {
     display: none;
     font-size: 35px;
-    margin: 0 0 0 550px;
 
     @media (min-width: 768px) {
-        display: inline;
+        display: flex;
     }
-}
+}   
 
 .container {
-    margin-right: auto;
+    width: 100%;
     margin-left: auto;
+    margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+    box-sizing: border-box;
+
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
 
     @media (min-width: 768px) {
-        width: 750px;
+        max-width: 720px;
     }
 
     @media (min-width: 992px) {
-        width: 970px;
+        max-width: 960px;
     }
 
-    @media (min-width: 1260px) {
-        width: 1200px;
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1320px;
     }
 }
 
@@ -185,78 +182,53 @@ li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    > .large-menu-btn:nth-child(-n+3) {
-        grid-column: span 4;
-    }
-
-    > .large-menu-btn:nth-child(n+4):nth-child(-n+7) {
-        grid-column: span 3;
-    }
-
-    @media (max-width: 767px) {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-
-        > .large-menu-btn {
-            grid-column: 1 / -1;
-            width: 100%;
-            min-width: 0;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 991px) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        > .large-menu-btn {
-            grid-column: span 1;
-            width: 100%;
-            min-width: 0;
-        }
-    }
 }
 
-.large-menu-btn { // Kinda done just some finishing touches pls
+.large-menu-btn {
     display: flex;
     flex-direction: column;
-    color: $black;
     justify-content: center;
     align-items: center;
-    justify-self: center;
-    margin: 0;
+    justify-self: stretch;
+    text-align: center;
     width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 300px;
+    padding: 25px 20px;
+    margin: 0;
     box-sizing: border-box;
-    height: 35vh;
     background-color: $white;
     border-radius: 15px;
     position: relative;
     top: 0;
     transition: 0.5s ease;
     border: 1px solid #e0e0e0;
+    color: $black;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 35px;
     
     #IT-read-more {
-        background-color: $support;
+        @include read-more-style($support);
     }
 
     #mark-read-more {
-        background-color: $market;
+        @include read-more-style($market);
     }
 
     #tele-read-more {
-        background-color: $tele;
+        @include read-more-style($tele);
     }
 
     #web-read-more {
-        background-color: $web;
+        @include read-more-style($web);
     }
 
     #security-read-more {
-        background-color: $cyber;
+        @include read-more-style($cyber);
     }
 
     #train-read-more {
-        background-color: $dev;
+        @include read-more-style($dev);
     }
 
     &:hover {
@@ -264,41 +236,13 @@ li {
         transition: 0.5s ease;
         color: $white;
 
-        #icon-dev::before, #dev-read-more {
-            background-color: $white;
-            color: $consult;
-        }
-
-        #icon-IT::before, #IT-read-more {
-            background-color: $white;
-            color: $support;
-        }
-
-        #icon-mark::before, #mark-read-more {
-            background-color: $white;
-            color: $market;
-        }
-
-
-        #icon-tele::before, #tele-read-more {
-            background-color: $white;
-            color: $tele;
-        }
-
-        #icon-web::before, #web-read-more {
-            background-color: $white;
-            color: $web;
-        }
-
-        #icon-security::before, #security-read-more {
-            background-color: $white;
-            color: $cyber;
-        }
-
-        #icon-train::before, #train-read-more {
-            background-color: $white;
-            color: $dev;
-        }
+        @include service-hover('#icon-dev', '#dev-read-more', $consult);
+        @include service-hover('#icon-IT', '#IT-read-more', $support);
+        @include service-hover('#icon-mark', '#mark-read-more', $market);
+        @include service-hover('#icon-tele', '#tele-read-more', $tele);
+        @include service-hover('#icon-web', '#web-read-more', $web);
+        @include service-hover('#icon-security', '#security-read-more', $cyber);
+        @include service-hover('#icon-train', '#train-read-more', $dev);
     }
 }
 
@@ -329,7 +273,7 @@ li {
         text-decoration: underline;
     }
 
-    @media (min-width: 768px) { // Media Queries do NOT need repeating like if it's min 768px and 992px is there and it has the same code just remove it DRY yk
+    @media (min-width: 768px) {
         display: none;
     }
 }
@@ -343,16 +287,19 @@ li {
 
 .menu-titles {
     font-size: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
 }
 
 .menu-para {
-    display: flex;
+    display: block;
+    width: 100%;
     font-size: 13px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    position: relative;
     text-align: center;
+    margin: 10px 0;
+    line-height: 1.6;
+    padding: 10px;
 }
 
 .menu-btn-span {
@@ -361,9 +308,10 @@ li {
     align-items: center;
     flex-direction: column;
     border-radius: 50%;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
     width: 65px;
     height: 65px;
+    flex-shrink: 0;
 }
 
 .menu-read-more {
@@ -386,74 +334,60 @@ li {
     color: $consult;
 }
 
-#consult-btn:hover {
-    background-color: $consult;
+#consult-btn {
+    @include btn-hover($consult);
 }
 
-#support-btn:hover {
-    background-color: $support;
+#support-btn {
+    @include btn-hover($support);
 }
 
-#market-btn:hover {
-    background-color: $market;
+#market-btn {
+    @include btn-hover($market);
 }
 
-#tele-btn:hover {
-    background-color: $tele;
+#tele-btn {
+    @include btn-hover($tele);
 }
 
-#web-btn:hover {
-    background-color: $web;
+#web-btn {
+    @include btn-hover($web);
 }
 
-#cyber-btn:hover {
-    background-color: $cyber;
+#cyber-btn {
+    @include btn-hover($cyber);
 }
 
-#dev-btn:hover {
-    background-color: $dev;
+#dev-btn {
+    @include btn-hover($dev);
 }
 
-#icon-dev::before {
-    @include btn-span-circle;
-    background-color: $consult;
-    content: "\f085";
+#icon-dev {
+    @include service-icon($consult, '\f085');
 }
 
-#icon-IT::before {
-    @include btn-span-circle;
-    background-color: $support;
-    content: "\e956";
+#icon-IT {
+    @include service-icon($support, '\e956');
 }
 
-#icon-mark::before {
-    @include btn-span-circle;
-    background-color: $market;
-    content: "\e903";
+#icon-mark {
+    @include service-icon($market, '\e903');
 }
 
-#icon-tele::before {
-    @include btn-span-circle;
-    background-color: $tele;
-    content: "\e901";
+#icon-tele {
+    @include service-icon($tele, '\e901');
 }
 
-#icon-web::before {
-    @include btn-span-circle;
-    background-color: $web;
-    content: "\ea80";
+#icon-web {
+    @include service-icon($web, '\ea80');
 }
 
-#icon-security::before {
-    @include btn-span-circle;
-    background-color: $cyber;
-    content: "\e902";
+#icon-security {
+    @include service-icon($cyber, '\e902');
 }
 
-#icon-train::before {
-    @include btn-span-circle;
-    background-color: $dev;
-    content: "\e904";
+#icon-train {
+    @include service-icon($dev, '\e904');
 }
 
 .pc-extra-nav {
@@ -479,160 +413,328 @@ li {
     cursor: pointer;
 
     @media (min-width: 768px) {
-        display: inline;
-    }
-
-    @media (min-width: 992px) {
-        display: inline;
-    }
-
-    @media (min-width: 1260px) {
-        display: inline;
+        display: block;
     }
 }
 
 #icon-extra-consult {
-
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $consult;
-        content: '\f085';
-    }
-    
-    &:hover {
-        background-color: $consult;
-        color: $white;
-
-        &::before {
-            color: $white;
-        }
-    }
+    @include nav-icon-style('\f085', $consult);
 }
 
 #icon-extra-support {
-
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $support;
-        content: '\e956';
-    }
-    
-    &:hover {
-        background-color: $support;
-        color: $white;
-
-        &::before {
-            color: $white;
-        }
-    }
+    @include nav-icon-style('\e956', $support);
 }
 
 #icon-extra-market {
-
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $market;
-        content: '\e903';
-    }
-    
-    &:hover {
-        background-color: $market;
-        color: $white;
-
-        &::before {
-            color: $white;
-        }
-    }
+    @include nav-icon-style('\e903', $market);
 }
 
 #icon-extra-tele {
-
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $tele;
-        content: '\e901';
-    }
-    
-    &:hover {
-        background-color: $tele;
-        color: $white;
-
-        &::before {
-            color: $white;
-        }
-    }
+    @include nav-icon-style('\e901', $tele);
 }
 
 #icon-extra-web {
-
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $web;
-        content: '\ea80';
-    }
-    
-    &:hover {
-        background-color: $web;
-        color: $white;
-
-        &::before {
-            color: $white;
-        }
-    }
+    @include nav-icon-style('\ea80', $web);
 }
 
 #icon-extra-cyber {
-
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $cyber;
-        content: '\e902';
-    }
-    
-    &:hover {
-        background-color: $cyber;
-        color: $white;
-
-        &::before {
-            color: $white;
-        }
-    }
+    @include nav-icon-style('\e902', $cyber);
 }
 
 #icon-extra-dev {
+    @include nav-icon-style('\e904', $dev);
+}
 
-    &::before {
-        font-family: 'icomoon';
-        font-size: 25px;
-        color: $dev;
-        content: '\e904';
+.scrolling-logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px;
+}
+
+.logo-dropdown {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.logo-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333645;
+    color: $white;
+    padding: 20px;
+    width: 250px;
+    z-index: 10;
+    text-align: center;
+    box-sizing: border-box;
+
+    h4 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        font-weight: normal;
     }
-    
-    &:hover {
-        background-color: $dev;
-        color: $white;
 
-        &::before {
-            color: $white;
+    p {
+        margin: 0 0 10px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    a {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .pink-btn {
+        background-color: $pink-btn;
+
+        &:hover {
+            background-color: darken($pink-btn, 10%);
         }
     }
+
+    .blue-btn {
+        background-color: $blue-btn;
+
+        &:hover {
+            background-color: darken($blue-btn, 10%);
+        }
+    }
+
+    .green-btn {
+        background-color: $green-btn;
+
+        &:hover {
+            background-color: darken($green-btn, 10%);
+        }
+    }
+
+    .yellow-btn {
+        background-color: $yellow-btn;
+
+        &:hover {
+            background-color: darken($yellow-btn, 10%);
+        }
+    }
+
+    .tooltip-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 15px;
+    }
 }
+
+.logo-dropdown:hover .logo-tooltip {
+    display: block;
+}      
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .large-menu-container {
+        padding: 25px 15px;
+    }
+
+    .menu-titles-media {
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .menu-main-title {
+        font-size: 30px;
+    }
+
+    .large-menu-btn {
+        padding: 25px 20px;
+    }
+
+    .menu-btn-span {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .menu-titles {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .menu-para {
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+
+    .menu-read-more {
+        margin-top: 10px;
+    }
+
+    #pc-menu-view {
+        display: none;
+    }
+
+    #mobile-view-h2 {
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    #img-main-cyber {
+        height: 450px;
+        object-position: center;
+    }
+
+    #img-main-gradient::after {
+        height: 450px;
+    }
+
+    .img-main-text {
+        padding: 20px;
+        top: 50%;
+        width: 100%;
+    }
+
+    #img-main-title {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    #img-main-p {
+        font-size: 16px;
+        line-height: 1.6;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 450px;
+    }
+
+    #img-main-readmore {
+        width: 200px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+@media (hover: none) {
+    .large-menu-btn:hover {
+        top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #img-main-cyber,
+    #img-main-gradient::after {
+        height: clamp(350px, 70vh, 450px);
+    }
+} 
 
 @media (max-width: 767px) {
     .large-menu {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
 
-        > .large-menu-btn, > .large-menu-btn:nth-child(-n+3), > .large-menu-btn:nth-child(n+4):nth-child(-n+7) {
-            grid-column: 1 / -1;
-            width: 100%;
-            min-width: 0;
-        }
+    .large-menu-btn {
+        grid-column: 1 / -1;
+    }
+}   
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .large-menu {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .large-menu > .large-menu-btn:nth-child(-n+3) {
+        grid-column: span 2;
+    }
+
+    .large-menu > .large-menu-btn:nth-child(n+4) {
+        grid-column: span 3;
+    }
+
+    .large-menu-btn {
+        min-height: 300px;
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    .menu-main-title {
+        font-size: 35px;
+    }
+
+    #img-main-title {
+        font-size: 45px;
+    }
+
+    #img-main-p {
+        font-size: 19px;
+    }
+
+    #mobile-view-h2 {
+        display: none;
     }
 }
+
+@media (min-width: 992px) {
+    .large-menu > .large-menu-btn:nth-child(-n+3) {
+        grid-column: span 4;
+    }
+
+    .large-menu > .large-menu-btn:nth-child(n+4):nth-child(-n+7) {
+        grid-column: span 3;
+    }
+}   

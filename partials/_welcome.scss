@@ -35,7 +35,7 @@
         font-size: 16px;
     }
 
-    h1 {
+    h2 {
         margin: 25px 25px 25px 0;
         padding: 15px;
         font-size: 36px;
@@ -57,6 +57,7 @@
         align-items: center;
         height: 58px;
         margin: 0;
+        padding: 10px;
         white-space: nowrap;
     }
 
@@ -80,6 +81,10 @@
     box-sizing: border-box;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover {
+        background-color: darken($btn-color, 10%);
+    }
 }
 
 #client-thinks {
@@ -126,7 +131,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 2px 8px 0 15px;
+        margin: 2px 8px 0 10px;
+        padding: 0 25px;
         width: 300px;
         height: 56px;
         border-radius: 6px;
@@ -136,11 +142,19 @@
     #google-review {
         background-color: #4387f6;
         flex: 1;
+
+        &:hover {
+            background-color: darken(#4387f6, 10%);
+        }
     }
 
     #trust-review {
         background-color: #00b67b;
         flex: 1;
+
+        &:hover {
+            background-color: darken(#00b67b, 10%);
+        }
     }
 }
 
@@ -222,7 +236,7 @@
         padding: 5px 0;
     }
 
-    .welcome-content h1 {
+    .welcome-section .welcome-headers {
         font-size: 30px;
         line-height: 34px;
         margin: 20px 0;
